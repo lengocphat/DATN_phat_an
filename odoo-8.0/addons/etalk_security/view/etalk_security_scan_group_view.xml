@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="etalk_security_scan_group_tree" model="ir.ui.view">
+            <field name="name">etalk.security.scan.group.tree</field>
+            <field name="model">etalk.security.scan.group</field>
+            <field name="arch" type="xml">
+                <tree string='Scan Group' edit="0" create="0">
+	                <field name="name" />
+	                <field name="perm_read" />
+	                <field name="perm_write" />
+	                <field name="perm_create" />
+	                <field name="perm_unlink" />
+	                <field name="module" />
+	                <field name="group" />
+                </tree>
+            </field>
+         </record>
+        
+        <record id="etalk_security_scan_group_form" model="ir.ui.view">
+            <field name="name">etalk.security.scan.group.form</field>
+            <field name="model">etalk.security.scan.group</field>
+            <field name="arch" type="xml">
+                <form string="Scan Group">
+                    <field name="name" />
+                    <field name="group" />
+	                <field name="perm_read" />
+	                <field name="perm_write" />
+	                <field name="perm_create" />
+	                <field name="perm_unlink" />
+	                <field name="module" />
+	                <field name="group" />
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_etalk_security_scan_group" model="ir.actions.act_window">
+            <field name="name">Scan Group</field>
+            <field name="res_model">etalk.security.scan.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="filter"/>
+            <field name="view_id" ref="etalk_security_scan_group_tree"/>
+        </record>
+		
+		
+
+	</data>
+</openerp>
+

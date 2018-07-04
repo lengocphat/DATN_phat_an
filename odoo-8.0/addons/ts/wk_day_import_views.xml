@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="wk_day_import_form">
+			<field name="name">wk_day_import</field>
+			<field name="model">wk.day.import.wizard</field>
+            <field eval="16" name="priority"/>
+			<field name="arch" type="xml">
+				<form string="Import Working day" >
+					<div class="oe_title">
+						<h2>
+							<label string="Import working day" />
+						</h2>
+					</div>
+					<!--nut xac nhan ne quanquan-->
+					<!--<button name="ts_confirmed" confirm="You có thích confirm không?" states="draft" type="object" string="Confirm"/>-->
+					<br />
+					<group options="{ 'create': false, 'create_edit': false}">
+						 <field name="file" filename="filename" />
+						<field name="filename" readonly="1" options="{'save_readonly' : True}" />
+                        <field name="ts_id"/>
+					</group>
+					            <div>
+						Lưu ý: bắt đầu nhập data từ dòng thứ 2 trở đi.
+					</div>
+
+					<footer>
+						<button name="import_excel_working_day" string="Import"
+							type="object" icon="gtk-apply" default_focus="1" />
+						or
+						<button string="Cancel" class= "oe_link" special="cancel" />
+					</footer>
+                    <div>
+                        <h2>Template Working Day :</h2>
+					</div>
+                    <div>
+                        <a href="/ts/static/data/Import_wk_day_template.xlsx">Import_wk_day_template</a>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_wk_day_import_form_wizard"
+			model="ir.actions.act_window">
+			<field name="name">Import Working Day</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wk.day.import.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+
+		</record>
+				<menuitem id="item_wk_day_import" name="Import Working Day"
+			parent="timesheet" groups="base.group_hr_user"
+			action="action_wk_day_import_form_wizard" />
+	</data>
+</openerp>

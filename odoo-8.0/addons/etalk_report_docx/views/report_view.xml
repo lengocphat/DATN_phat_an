@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record id="act_report_xml_view_etalk" model="ir.ui.view">
+			<field name="name">ir.actions.report.xml.etalk.reports</field>
+			<field name="model">ir.actions.report.xml</field>
+			<field name="inherit_id" ref="base.act_report_xml_view"/>
+			<field name="arch" type="xml">
+				<field name="report_type" position='attributes'>
+					<attribute name="on_change">etalk_on_change_report_type(report_type, model)</attribute>
+				</field>
+				<field name='report_type' position='after'>
+					<field name="etalk_report_output_type" attrs="{'invisible': [('report_type', '!=', 'etalk_report')], 'required': [('report_type', '=', 'etalk_report')]}"/>
+					<field name="etalk_file" filename="etalk_filename" attrs="{'invisible': [('report_type', '!=', 'etalk_report')], 'required': [('report_type', '=', 'etalk_report')]}"/>
+					<field name="etalk_filename" attrs="{'required': [('report_type', '=', 'etalk_report')]}" invisible='1'/>
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>

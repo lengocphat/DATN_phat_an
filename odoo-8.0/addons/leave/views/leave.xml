@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="action_leaves" model="ir.actions.act_window">
+            <field name="name">leave</field>
+            <field name="res_model">leave</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="leave_form_view">
+            <field name="name">leave.form</field>
+            <field name="model">leave</field>
+            <field name="arch" type="xml">
+                <form string="Leave">
+                    <header>
+                        <button name="set_leave_waiting" string="Require For Leave" stage="draft" type="object" class="oe_highlight" groups="base.group_user" attrs="{'invisible':[('stage','not in','draft')]}"/>
+                        <button name="set_leave_approved" string="Approved" stage="waiting" type="object" class="oe_highlight" groups="base.group_hr_manager" attrs="{'invisible':[('stage','not in','waiting')]}"/>
+                        <button name="set_leave_cancelled" string="Reject" stage="waiting" type="object" class="oe_highlight" groups="base.group_hr_manager" attrs="{'invisible':[('stage','not in','waiting')]}"/>
+                        <field name="stage" widget="statusbar" statusbar_visible="draft,waiting,approved"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="leave_type_id" on_change="onchange_leave_type(leave_type_id)"/>
+                            <field name="day_off_left" readonly="True" options="{'save_readonly' : True}"/>
+                            <field name="date_from" on_change="date_onchange(date_from, date_to)"/>
+                            <field name="reason"/>
+                        </group>
+                        <group>
+                            <field name="total_day_leave_type" readonly="True" options="{'save_readonly' : True}"/>
+                            <field name="day_off" readonly="True" options="{'save_readonly' : True}"/>
+                            <field name="date_to" on_change="date_onchange(date_from, date_to)"/>
+                            <field name="total_day" readonly="True" options="{'save_readonly' : True}"/>
+                        </group>
+                    </group>
+                    <div style="color:red">
+                        <h2>Lưu Ý :</h2>
+                        <br></br>
+                        Không được đăng ký ngày nghỉ trong quá khứ!
+                        <br></br>
+                        Chi tiết loại nghỉ:
+                        <br></br>
+                        <field name="description_leave"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="leave_tree_view">
+            <field name="name">leave.tree</field>
+            <field name="model">leave</field>
+            <field name="arch" type="xml">
+                <tree string="Leave">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="leave_type_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="total_day"/>
+                    <field name="stage" string="Trạng thái"/>
+                    <!--<field name="sign_in_emp_id"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="leaves_manager" name="Leaves"></menuitem>
+        <menuitem id="leaves_a" name="Leaves" parent="leaves_manager"></menuitem>
+        <menuitem id="leaves" name="Leaves" parent="leaves_a" action="action_leaves"></menuitem>
+
+    </data>
+</openerp>

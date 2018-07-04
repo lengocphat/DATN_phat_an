@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="view_mail_config" model="ir.ui.view">
+            <field name="name">Company mail Settings</field>
+            <field name="model">config.mail</field>
+            <field name="arch" type="xml">
+                <form string="Config Mail">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <separator string="Company Mail"/>
+                    <group>
+                        <group>
+                            <field name="user_name" options="{'validate_email': True}" required="1"/>
+                            <field name="password" password="True" required="1"/>
+                            <field name="security" required="1"/>
+                            <button type="object" name="test" string="Test Connection" class="oe_highlight" one_click_button="True"/>
+                        </group>
+                        <group>
+                            <!-- use for the gap -->
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_mail_config" model="ir.actions.act_window">
+            <field name="name">Cấu hình</field>
+            <field name="res_model">config.mail</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" eval="view_mail_config"/>
+            <field name="target">inline</field>
+        </record>
+    </data>
+</openerp>

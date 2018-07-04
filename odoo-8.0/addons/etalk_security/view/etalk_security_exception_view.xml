@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="etalk_security_exception_tree" model="ir.ui.view">
+            <field name="name">etalk.security.exception.tree</field>
+            <field name="model">etalk.security.exception</field>
+            <field name="arch" type="xml">
+                <tree string="Exception">
+	                <field name="name" />
+	                <field name="perm_read" />
+	                <field name="perm_write" />
+	                <field name="perm_create" />
+	                <field name="perm_unlink" />
+                </tree>
+            </field>
+         </record>
+        
+        <record id="etalk_security_exception_form" model="ir.ui.view">
+            <field name="name">etalk.security.exception.form</field>
+            <field name="model">etalk.security.exception</field>
+            <field name="arch" type="xml">
+                <form string="Exception" version="7.0">
+	                <sheet>
+	                	<div class="oe_title">
+							<h1>
+								<field name="name" />
+							</h1>
+							<group><field name='active' /></group>
+						</div>
+						<group>
+							<group>
+								<field name="perm_read" />
+				                <field name="perm_write" />
+							</group>
+							<group>
+								<field name="perm_create" />
+			                	<field name="perm_unlink" />
+							</group>
+						</group>
+						<group string="Groups (no group = global)">
+							<field name="groups" nolabel="1"/>
+						</group>
+	                </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_etalk_security_exception" model="ir.actions.act_window">
+            <field name="name">Exception</field>
+            <field name="res_model">etalk.security.exception</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="filter"/>
+            <field name="view_id" ref="etalk_security_exception_tree"/>
+        </record>
+		
+		
+
+	</data>
+</openerp>
+

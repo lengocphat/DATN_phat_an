@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record id="act_report_xml_view_hrs" model="ir.ui.view">
+			<field name="name">ir.actions.report.xml.hrs.reports</field>
+			<field name="model">ir.actions.report.xml</field>
+			<field name="inherit_id" ref="base.act_report_xml_view"/>
+			<field name="arch" type="xml">
+				<field name="report_type" position='attributes'>
+					<attribute name="on_change">hrs_on_change_report_type(report_type, model)</attribute>
+				</field>
+				<field name='report_type' position='after'>
+					<field name="hrs_report_output_type" attrs="{'invisible': [('report_type', '!=', 'hrs_report')], 'required': [('report_type', '=', 'hrs_report')]}"/>
+					<field name="hrs_file" filename="hrs_filename" attrs="{'invisible': [('report_type', '!=', 'hrs_report')], 'required': [('report_type', '=', 'hrs_report')]}"/>
+					<field name="hrs_filename" attrs="{'required': [('report_type', '=', 'hrs_report')]}" invisible='1'/>
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>

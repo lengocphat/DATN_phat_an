@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="action_leaves_type" model="ir.actions.act_window">
+            <field name="name">leave.type</field>
+            <field name="res_model">leave.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="leave_type_form_view">
+            <field name="name">leave.type.form</field>
+            <field name="model">leave.type</field>
+            <field name="arch" type="xml">
+                <form string="Leave Type">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="day_off_allowed"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="leave_type_tree_view">
+            <field name="name">leave.type.tree</field>
+            <field name="model">leave.type</field>
+            <field name="arch" type="xml">
+                <tree string="Leave Type">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="day_off_allowed" options="{'integer_number': True}"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        <menuitem id="leaves_config" name="Leaves Configuration" parent="leaves_manager"></menuitem>
+        <menuitem id="leaves_type" name="Leaves Type" parent="leaves_config" action="action_leaves_type"></menuitem>
+
+    </data>
+</openerp>

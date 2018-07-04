@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+    <data>
+        <template id="etalk_timewidget.etalk_timewidget_backend" name="Time Widget" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+            	<!-- add lib -->
+            	<script type="text/javascript" src="/etalk_timewidget/static/lib/jquery.itimepicker/js/jquery.datetimepicker.js"></script>
+            	<link rel="stylesheet" href="/etalk_timewidget/static/lib/jquery.itimepicker/css/jquery.datetimepicker.css"/>
+            	<!-- add script -->
+                <script type="text/javascript" src="/etalk_timewidget/static/src/js/etalk_timewidget.js"></script>
+                <script type="text/javascript" src="/etalk_timewidget/static/src/js/etalk_base.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>
+

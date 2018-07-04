@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="ts_list_action">
+            <field name="name">Timesheet</field>
+            <field name="res_model">ts</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first course
+                </p>
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="ts_form_view">
+            <field name="name">ts.form</field>
+            <field name="model">ts</field>
+            <field name="arch" type="xml">
+                <form string="ts Form">
+                    <sheet>
+                        <group>
+                            <field name="name" readonly="True" options="{'save_readonly' : True}"/>
+                            <field name="code"/>
+                            <field name="effect_from" on_change="onchange_date(effect_from,effect_to)"/>
+                            <field name="effect_to" on_change="onchange_date(effect_from,effect_to)"/>
+                        </group>
+                        <field name="description"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="ts_tree_view">
+            <field name="name">ts.tree</field>
+            <field name="model">ts</field>
+            <field name="arch" type="xml">
+                <tree string="TS list">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="effect_to"/>
+                    <field name="effect_from"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- top level menu: no parent -->
+        <menuitem id="timesheet" parent="hr.menu_hr_root" name="Time Sheet"/>
+        <menuitem id="timesheet_menu" name="Timesheet" parent="timesheet"
+                  action="ts_list_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
+    </data>
+</openerp>

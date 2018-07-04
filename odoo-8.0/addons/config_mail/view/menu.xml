@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- deposit management -->
+        <menuitem name="Mail" id="mail_config_menu" parent="base.menu_config" action="action_mail_config"/>
+    </data>
+</openerp>

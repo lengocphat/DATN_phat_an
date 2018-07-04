@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+	    <menuitem id="menu_etalk_security" parent="base.menu_config" name="Etalk Security"/>
+        
+        <menuitem
+            id="menu_etalk_security_exception"
+            action="action_etalk_security_exception"
+            parent="menu_etalk_security"
+        />
+        
+        
+       <menuitem
+            id="menu_etalk_security_scan_group"
+            action="action_etalk_security_scan_group"
+            parent="menu_etalk_security"
+        />
+    
+    </data>
+</openerp>

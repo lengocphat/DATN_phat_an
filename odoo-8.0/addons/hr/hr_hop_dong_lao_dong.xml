@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <template id="hop_dong_lao_dong">
+            <t t-foreach="docs" t-as="o">
+                <div class="page">
+                    <h1 style="text-align:center">HỢP ĐỒNG LAO ĐỘNG</h1>
+                    <br/>
+                    <div style="margin:50px">
+                        <ul>
+                            <li>Căn cứ Bộ luật lao động hiện hành và các văn bản hướng dẫn liên quan;</li>
+                            <li>Căn cứ nhu cầu và khả năng của các Bên;</li>
+                        </ul>
+                        <br/>
+                        <p>Hôm nay, ngày <span t-field="o.days"/> tháng <span t-field="o.months"/> năm <span t-field="o.years"/></p>
+                        <p>Tại Văn phòng Công ty Cổ phần Dịch vụ Agilsun</p>
+                        <p>Chúng tôi gồm</p>
+                        <br/>
+                        <div style="float:left; width:20%">
+                            <p><b>Bên A</b></p>
+                            <p>Địa chỉ</p>
+                            <p>Điện thoại</p>
+                            <p>Mã số thuế</p>
+                            <p>Đại diện </p>
+                            <p>Chức vụ</p>
+                        </div>
+                        <div style="float:right; width:80%">
+                            <p><b style="color:blue">: CÔNG TY CỔ PHẦN DỊCH VỤ AGILSUN</b></p>
+                            <p>: 469 Điện Biên Phủ, Phường 25, Q. Bình Thạnh, Tp.Hồ Chí Minh</p>
+                            <p>: (08)73024111</p>
+                            <p>: 0311907295</p>
+                            <p>:  Bà LÊ THỊ LỜ</p>
+                            <p>: Giám Đốc Nhân Sự</p>
+                        </div>
+                        <p>(Căn cứ Giấy ủy quyền 13/GUQ-GHN/2017 ký ngày 17 tháng 06 năm 2017)</p>
+                        <p>Sau đây gọi là <b>“Công ty”</b> hoặc <b>“Người sử dụng lao động”</b></p>
+                        <br/>
+                        <p>Và một Bên là </p>
+                        <br/>
+
+                        <div style="float:left; width:20%">
+                            <p><b>Bên B</b></p>
+                            <p>Sinh ngày</p>
+                            <p>Số CMND</p>
+                            <p>Thường trú</p>
+                            <p>Điện thoại</p>
+                        </div>
+                        <div style="float:right; width:80%">
+                            <p><b>: Ông/Bà <span t-field="o.name"/></b></p>
+                            <p>: <span t-field="o.birthday"/></p>
+                            <p>: <span t-field="o.identification_id"/></p>
+                            <p>: <span t-field="o.address_home_id"/></p>
+                            <p>: <span t-field="o.mobile"/></p>
+                        </div>
+                        <p><b>Sau đây gọi là “Người lao động”</b></p>
+                        <p>Sau khi thỏa thuận, các Bên đồng ý ký Hợp đồng Lao động <b>(“Hợp đồng”)</b> với những điều khoản sau đây:</p>
+                        <br/>
+                        <h5><b>ĐIỀU 1. 	THỜI HẠN VÀ CÔNG VIỆC HỢP ĐỒNG </b></h5>
+                        <div style="float:left; width:30%">
+                            <p>Loại Hợp đồng</p>
+                            <p>Thời hạn</p>
+                            <p>Địa điểm làm việc</p>
+                            <p>Chức danh chuyên môn /vị trí công việc</p>
+                            <p>Công việc</p>
+                        </div>
+                        <div style="float:left; width:70%">
+                            <p>: Hợp đồng <span t-field="o.contract_type"/></p>
+                            <p>: Từ ngày <span t-field="o.last_end_date"/> đến ngày <span t-field="o.end_date"/></p>
+                            <p>: <span t-field="o.company_id"/> hoặc các địa điểm khác theo yêu cầu của bên A.</p>
+                            <p>: <span t-field="o.job_id"/></p>
+                            <ul>
+                                <li>Thực hiện các công việc có liên quan đến vị trí <span t-field="o.job_id"/> ;</li>
+                                <li>Thực hiện các công việc khác theo bảng mô tả chi tiết công việc của vị trí <span t-field="o.job_id"/> (nếu có);</li>
+                                <li>Các công việc khác khi được người sử dụng lao động phân công.</li>
+                            </ul>
+                        </div>
+                        <br/>
+                        <h5><b>ĐIỀU 2. 	CHẾ ĐỘ LÀM VIỆC</b></h5>
+                        <div style="margin-left:50px">
+                            <p>2.1	Thời giờ làm việc: tối đa 8 giờ mỗi ngày, 6 ngày/tuần, chi tiết cụ thể theo quy định tại Nội qui lao động của Công ty và tùy theo tính chất công việc. Ngoài ra theo nhu cầu kinh doanh, Người sử dụng lao động có quyền yêu cầu người lao động làm thêm giờ theo quy định tại Bộ luật lao động.. </p>
+                            <p>2.2	Dụng cụ, trang thiết bị làm việc: Người lao động được cấp phát các dụng cụ, trang thiết bị làm việc cần thiết (nếu có).</p>
+                            <br/>
+                        </div>
+                        <h5><b>ĐIỀU 3. 	QUYỀN LỢI VÀ NGHĨA VỤ CỦA NGƯỜI LAO ĐỘNG</b></h5>
+                        <div style="margin-left:50px">
+                            <p><b>3.1	Quyền lợi của Người lao động</b></p>
+                            <div style="margin-left:50px">
+                                <p>a.	Phương tiện đi lại làm việc: Người lao động tự túc hoặc theo quy định của Người sử dụng lao động.</p>
+                                <p>b.	Thu nhập công việc: <span t-field="o.salary_proposed"/> đồng/ tháng (lương gộp). Các chi phí khác có phát sinh sẽ được chi trả theo chính sách được ban hành tại từng thời điểm cụ thể.  </p>
+                                <p>c.	Hình thức trả lương: Trả lương theo tháng (bằng chuyển khoản qua ngân hàng)</p>
+                                <p>d.	Thời điểm trả lương: Tiền lương được trả vào kỳ lương ngày 05 hoặc ngày 20 hàng tháng vào tài khoản của bên B. Trong trường hợp thay đổi thời gian sẽ được thông báo cụ thể bởi phòng Nhân sự.</p>
+                                <p>e.	Thuế TNCN: Các khoản thu nhập trên đã bao gồm thuế TNCN, công ty sẽ trích đóng khoản thuế này cho cơ quan Nhà nước theo luật định.</p>
+                                <p>f.	An toàn lao động: Được trang bị theo quy định tại Nội qui lao động Công ty.</p>
+                                <p>g.	Chế độ nghỉ ngơi: Theo quy định của Công ty và theo quy định của pháp luật lao động hiện hành.</p>
+                            </div>
+                            <p><b>3.2	Nghĩa vụ của Người lao động</b></p>
+                            <div style="margin-left:50px">
+                                <p>a.	Thực hiện tất cả công việc được giao theo Hợp đồng này và theo sự phân công của Người sử dụng lao động.</p>
+                                <p>b.	Chấp hành lệnh điều hành sản xuất – kinh doanh, nội quy kỷ luật lao động, an toàn lao động…</p>
+                                <p>c.	Trách nhiệm vật chất: Theo quy định của Công ty hoặc theo quy định của pháp luật lao động. Giá trị bồi thường căn cứ vào giá trị thiệt hại về tài sản theo giá thị trường tại thời điểm bồi thường cho Người sử dụng lao động.</p>
+                                <p>d.	Tuân thủ nghĩa vụ bảo mật theo quy định của Công ty hoặc theo sự thỏa thuận giữa Người sử dụng lao động và Người lao động.</p>
+                                <p>e.	Không được có bất kỳ lời nói hay hành động nào gây thiệt hại đến lợi ích hay hình ảnh của Người sử dụng lao động.</p>
+                                <p>f.	Không được sử dụng tên, uy tín của Người sử dụng lao động nhằm mục đích trục lợi cá nhân hoặc bất kỳ mục đích khác không nhằm phục vụ lợi ích cho Người sử dụng lao động khi chưa được Người sử dụng lao động đồng ý bằng văn bản.</p>
+                                <p>g.	Trường hợp công việc không đạt yêu cầu hoặc Hợp đồng được chấm dứt trước thời hạn, thì Người lao động có trách nhiệm bàn giao công việc liên quan khi kết thúc Hợp đồng này, đồng thời hoàn trả mọi tài liệu, dữ liệu đã được Công ty hoặc cấp trên chuyển giao.</p>
+                                <p>h.	Bảo mật thông tin và tuân thủ các quy định tại phụ lục đính kèm Hợp đồng này.</p>
+                                <p>i.	Trong trường hợp Hợp đồng chấm dứt vì bất kỳ lý do gì thì Người lao động có nghĩa vụ hoàn thành việc bàn giao các công việc đã thực hiện trong thời gian làm việc cho người được Người sử dụng lao động chỉ định. </p>
+                            </div>
+                        </div>
+                        <h5><b>ĐIỀU 4.	NGHĨA VỤ VÀ QUYỀN HẠN CỦA NGƯỜI SỬ DỤNG LAO ĐỘNG</b></h5>
+                        <div style="margin-left:50px">
+                            <p><b>4.1	Nghĩa vụ của Người sử dụng lao động</b></p>
+                            <div style="margin-left:50px">
+                                <p>a.	Thực hiện đầy đủ những điều đã cam kết trong Hợp đồng lao động.</p>
+                                <p>b.	Thanh toán đầy đủ, đúng thời hạn các chế độ và quyền lợi cho Người lao động theo Hợp đồng lao động này.</p>
+                            </div>
+                            <p><b>4.2	Quyền hạn của Người sử dụng lao động</b></p>
+                            <div style="margin-left:50px">
+                                <p>a.	Điều hành Người lao động hoàn thành công việc theo Hợp đồng lao động (bố trí, điều chuyển, tạm ngừng việc…).</p>
+                                <p>b.	Chấm dứt Hợp đồng lao động; kỷ luật Người lao động theo quy định của pháp luật, Nội quy lao động của Công ty.</p>
+                                <p>c.	Áp dụng các biện pháp chế tài, bồi thường thiệt hại vật chất theo quy định của pháp luật, quy định của Công ty hoặc theo sự cam kết, thỏa thuận giữa Người sử dụng lao động và Người lao động đối với những hành vi vi phạm nghĩa vụ của Người lao động.</p>
+                            </div>
+                        </div>
+                        <h5><b>ĐIỀU 5. 	ĐIỀU KHOẢN THI HÀNH</b></h5>
+                        <div style="margin-left:50px">
+                            <p>5.1	Trong thời gian làm việc, mỗi bên có quyền chấm dứt Hợp đồng lao động theo quy định của pháp luật hiện hành. </p>
+                            <p>5.2	Những vấn đề về lao động không được quy định trong Hợp đồng lao động này thì áp dụng theo các quy định khác tại Nội quy Lao động, chính sách của Công ty, trường hợp chưa có trong các quy định khác của Công ty thì áp dụng quy định của pháp luật.</p>
+                            <p>5.3	Hợp đồng lao động được lập thành 02 (hai) bản có giá trị như nhau, mỗi bên giữ 01 (một) bản và có hiệu lực kể từ ngày ký.</p>
+                        </div>
+                    </div>
+                    <div style="float:left; width:50%; text-align:center">
+                        <p><b>NGƯỜI LAO ĐỘNG</b></p>
+                        <p><i>( Ký, ghi rõ họ tên )</i></p>
+                    </div>
+                    <div style="float:right; width:50%; text-align:center">
+                        <p><b>NGƯỜI SỬ DỤNG LAO ĐỘNG</b></p>
+                        <p>Giám đốc Nhân sự</p>
+                        <br/><br/><br/><br/><br/>
+                        <p><b>HUỲNH PHƯỚC AN</b></p>
+                    </div>
+
+                    <!--<p>This object's name is <span t-field="o.name"/></p>-->
+                </div>
+            </t>
+        </template>
+
+        <record id="paperformat_hopdonglaodong" model="report.paperformat">
+            <field name="name">hop dong lao dong</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">80</field>
+            <field name="page_width">175</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">3</field>
+            <field name="margin_bottom">3</field>
+            <field name="margin_left">3</field>
+            <field name="margin_right">3</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">3</field>
+            <field name="dpi">80</field>
+        </record>
+    </data>
+</openerp>
